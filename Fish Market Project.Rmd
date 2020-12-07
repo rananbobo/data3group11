@@ -1,0 +1,58 @@
+---
+title: "Regression and Analysis of Variance"
+author: "Dataset 3 (Fish Market)."
+date: "29/11/2020"
+output:
+  pdf_document: default
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+## Fish Market Dataset for Regression
+#### Data Description.
+
+El conjunto de datos del mercado de pescado contiene información sobre especies de peces comunes en las ventas del mercado. El conjunto de datos incluye las especies de peces, peso, longitud, altura y ancho.
+
+Este conjunto de datos es un registro de 7 especies de peces diferentes comunes en las ventas del mercado de pescado. Con este conjunto de datos, se puede realizar un modelo predictivo utilizando datos fáciles de usar y estimar el peso de los peces.
+
+
+```{r}
+data = read.csv('Fish.csv')
+head(data)
+```
+
+Meanings of the Columns:
+
+Species: Species name of fish
+Weight: Weight of fish in gram
+Length1: Vertical length in cm
+Length2: Diagonal length in cm
+Length3: Cross length in cm
+Height: Height in cm
+Width: Diagonal width in cm
+Our dependent variable is 'Weight'. Independent variables are 'species', different lengths, 'height' and 'width'.
+
+I will use independent variables (measurements of the fish) to estimate dependent variable (weight of the fish).
+```{r data}
+summary(data)
+```
+```{r}
+str(data)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
